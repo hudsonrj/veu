@@ -1,0 +1,331 @@
+[
+  {
+    "id": "ruflo-core",
+    "name": "ruflo-core",
+    "category": "core",
+    "description": "Foundation plugin — registers the ruflo MCP server (300+ tools across memory/agentdb/embeddings/hooks/aidefence/neural/autopilot/browser/agent/swarm), provides 4 generalist agents (coder/researcher/reviewer/witness-curat",
+    "enabled": true
+  },
+  {
+    "id": "ruflo-swarm",
+    "name": "ruflo-swarm",
+    "category": "core",
+    "description": "Agent teams, swarm coordination, Monitor streams, and worktree isolation — wraps 4 swarm_* + 8 agent_* MCP tools (12 total) plus 6 topologies (hierarchical / mesh / hierarchical-mesh / ring / star / adaptive). With Claud",
+    "enabled": true
+  },
+  {
+    "id": "ruflo-console",
+    "name": "ruflo-console",
+    "category": "core",
+    "description": "ruflo's cockpit inside Claude Code and the one /ruflo command for every ruflo mod (function hooks, early access). Views: overview with health alerts, swarm topology graph, claims flow with TTL rings, federation map, plug",
+    "enabled": true
+  },
+  {
+    "id": "ruflo-mods",
+    "name": "ruflo-mods",
+    "category": "core",
+    "description": "ruflo as a Claude Code mod (function hooks, ADR-404): in-process prompt routing, edit learning signals, tighten-only tool checks from ruflo policy, the cost-tracker budget ladder, a mod trust gate for newly installed mod",
+    "enabled": true
+  },
+  {
+    "id": "ruflo-autopilot",
+    "name": "ruflo-autopilot",
+    "category": "core",
+    "description": "Autonomous /loop-driven task completion with learning, prediction, and progress tracking — wraps 10 autopilot_* MCP tools (status/enable/disable/config/reset/log/progress/learn/history/predict)",
+    "enabled": true
+  },
+  {
+    "id": "ruflo-loop-workers",
+    "name": "ruflo-loop-workers",
+    "category": "core",
+    "description": "Cache-aware /loop workers and CronCreate background automation — wraps 5 hooks_worker-* MCP tools (list/dispatch/status/detect/cancel) and exposes 12 background worker triggers (ultralearn, optimize, consolidate, predict",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-workflows",
+    "name": "ruflo-workflows",
+    "category": "core",
+    "description": "Workflow automation across two surfaces: the 10 workflow_* MCP tools (create/run/execute/status/list/pause/resume/cancel/delete/template) with full state-machine lifecycle (created → running ↔ paused → completed/cancelle",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-metaharness",
+    "name": "ruflo-metaharness",
+    "category": "core",
+    "description": "MetaHarness integration for ruflo — surfaces score/genome/mint/mcp-scan/threat-model via skills; pairs with @metaharness/router (ADR-148/149) for cost-optimal model routing; honors ADR-150's architectural constraint that",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-agentdb",
+    "name": "ruflo-agentdb",
+    "category": "memory",
+    "description": "Substrate plugin for Ruflo memory: AgentDB controller bridge (15 agentdb_* MCP tools), RuVector ONNX embeddings (10 embeddings_* tools incl. RaBitQ 32x quantization), and WASM HNSW pattern router (3 ruvllm_hnsw_* tools).",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-rag-memory",
+    "name": "ruflo-rag-memory",
+    "category": "memory",
+    "description": "RuVector memory with HNSW search, AgentDB, and semantic retrieval. As a mod (ADR-445): a write guard that keeps secrets out of memory, /rag-mod, and a status file the console shows",
+    "enabled": true
+  },
+  {
+    "id": "ruflo-rvf",
+    "name": "ruflo-rvf",
+    "category": "memory",
+    "description": "RVF format for portable agent memory, session persistence, and cross-platform transfer. As a mod (ADR-445): a write guard that keeps secrets out of memory, sessions and transfers, /rvf-mod, and a status file the console ",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-ruvector",
+    "name": "ruflo-ruvector",
+    "category": "memory",
+    "description": "Self-learning vector database via npx ruvector@0.3.3 — HNSW, adaptive LoRA embeddings, code-graph clustering, hooks routing, brain/SONA, 103 MCP tools. As a mod (ADR-445): a write guard that keeps secrets out of the vect",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-knowledge-graph",
+    "name": "ruflo-knowledge-graph",
+    "category": "memory",
+    "description": "Knowledge graph construction — entity extraction, relation mapping, and pathfinder graph traversal. As a mod (ADR-445): keeps secrets out of the graph, confirms graph deletes, /kg-mod, and a status file the console shows",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-intelligence",
+    "name": "ruflo-intelligence",
+    "category": "memory",
+    "description": "User-facing surface for Ruflo's self-learning system: 6 neural_* + 10 hooks_intelligence_* + 6 routing/meta hooks + 3 hooks_model-* + 4 SONA/MicroLoRA tools (29 total). Implements the 4-step pipeline (RETRIEVE → JUDGE → ",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-daa",
+    "name": "ruflo-daa",
+    "category": "memory",
+    "description": "Dynamic Agentic Architecture — 8 daa_* MCP tools for adaptive agents (create/adapt), cognitive patterns, workflows (create/execute), knowledge sharing, and learning/performance metrics. Feeds the JUDGE phase of the 4-ste",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-graph-intelligence",
+    "name": "ruflo-graph-intelligence",
+    "category": "memory",
+    "description": "RuFlo Graph Intelligence Engine — real-time relationship intelligence with complexity-aware execution. Single-entry personalized PageRank, streaming delta updates, witness-signed reasoning artifacts, federation-distribut",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-security-audit",
+    "name": "ruflo-security-audit",
+    "category": "quality",
+    "description": "Security review, dependency scanning, policy gates, and CVE monitoring",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-aidefence",
+    "name": "ruflo-aidefence",
+    "category": "quality",
+    "description": "AI safety scanning, PII detection, prompt injection defense, and adaptive threat learning",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-protector",
+    "name": "ruflo-protector",
+    "category": "quality",
+    "description": "Project Anatole: an optional, learning watchdog for unattended agents. Deterministic OWASP-mapped rules, a per-project behavioural baseline, four modes (off, learn, notify, enforce), alerts you can read later.",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-testgen",
+    "name": "ruflo-testgen",
+    "category": "quality",
+    "description": "Test gap detection, coverage analysis, and automated test generation — drives the testgaps background worker via hooks_worker-dispatch; SPARC Refinement-phase canonical owner",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-browser",
+    "name": "ruflo-browser",
+    "category": "quality",
+    "description": "Session-as-skill browser automation: Playwright + RVF cognitive containers + ruvector trajectories + AgentDB selector memory + AIDefence PII/injection gates As a mod (ADR-445 pattern): a tighten-only tool guard, a local ",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-observability",
+    "name": "ruflo-observability",
+    "category": "quality",
+    "description": "Structured logging, distributed tracing, and metrics — correlate agent swarm activity with application telemetry. As a mod (ADR-445): a tighten-only guard on its tools, /observe-mod, and a status file the console shows",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-cost-tracker",
+    "name": "ruflo-cost-tracker",
+    "category": "quality",
+    "description": "Token usage tracking, model cost attribution per agent, budget alerts, and optimization recommendations — uses memory_* (namespace-routed) for cost-tracking and cost-patterns; pairs with federation budget circuit breaker",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-adr",
+    "name": "ruflo-adr",
+    "category": "arch",
+    "description": "ADR lifecycle management — create, index, reconcile, supersede, check compliance, and link Architecture Decision Records to code via AgentDB hierarchical store + causal edges (supersedes/amends/depends-on/related)",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-ddd",
+    "name": "ruflo-ddd",
+    "category": "arch",
+    "description": "Domain-Driven Design scaffolding — bounded contexts, aggregate roots, domain events, value objects, repositories, and anti-corruption layers; navigable domain graph stored in AgentDB",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-sparc",
+    "name": "ruflo-sparc",
+    "category": "arch",
+    "description": "SPARC methodology — Specification, Pseudocode, Architecture, Refinement, Completion phases with gate checks",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-docs",
+    "name": "ruflo-docs",
+    "category": "arch",
+    "description": "Documentation generation, API docs (JSDoc/TSDoc/OpenAPI), and drift detection — drives the `document` background worker via hooks_worker-dispatch; uses Haiku model for cost-efficient docs work",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-jujutsu",
+    "name": "ruflo-jujutsu",
+    "category": "arch",
+    "description": "Advanced git workflows with diff analysis, risk scoring, change classification (feature/bugfix/refactor/...), and reviewer recommendations — wraps 6 analyze_* MCP tools (diff, diff-risk, diff-classify, diff-reviewers, fi",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-goals",
+    "name": "ruflo-goals",
+    "category": "domain",
+    "description": "Long-horizon goal planning, deep research orchestration, and adaptive replanning using GOAP algorithms",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-federation",
+    "name": "ruflo-federation",
+    "category": "domain",
+    "description": "Cross-installation agent federation with zero-trust security, peer discovery, consensus-based task routing, and per-call budget circuit breaker (ADR-097)",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-ruos",
+    "name": "ruflo-ruos",
+    "category": "domain",
+    "description": "Run ruflo swarm agents on your own ruOS cloud desktops via the tenant-authenticated fleet MCP or per-tenant SSH; optional and removable (ADR-405)",
+    "enabled": true
+  },
+  {
+    "id": "ruflo-neural-trader",
+    "name": "ruflo-neural-trader",
+    "category": "domain",
+    "description": "Neural trading via npx neural-trader — self-learning strategies, Rust/NAPI backtesting, 112+ MCP tools, swarm coordination, and portfolio optimization. As a mod (ADR-445): a tighten-only guard on its tools, /trader-mod, ",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-market-data",
+    "name": "ruflo-market-data",
+    "category": "domain",
+    "description": "Market data ingestion — feed normalization, OHLCV vectorization, and HNSW-indexed pattern matching. As a mod (ADR-445): keeps credentials and credentialed feed URLs out of market memory, /market-mod, and a status file th",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-iot-cognitum",
+    "name": "ruflo-iot-cognitum",
+    "category": "domain",
+    "description": "IoT device lifecycle, telemetry anomaly detection, fleet management, and witness chain verification for Cognitum Seed hardware",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-ai-team",
+    "name": "ruflo-ai-team",
+    "category": "domain",
+    "description": "Give Claude a tenant-isolated AI team that divides work, coordinates progress, recalls approved context, and returns evidence-backed results.",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-arena",
+    "name": "ruflo-arena",
+    "category": "domain",
+    "description": "Competitive ruliology for Ruflo swarms — arenas, tournaments, and adaptive co-evolution of program strategies (ADR-147/148). Strategies-as-programs compete under payoff games; tournaments produce Wolfram-style competitiv",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-agent",
+    "name": "ruflo-agent",
+    "category": "dev",
+    "description": "Agent runtimes for ruflo — local WASM-sandboxed agents (rvagent: 10 wasm_agent_*/wasm_gallery_* MCP tools, built on @ruvector/rvagent-wasm + @ruvector/ruvllm-wasm per ADR-070) plus Anthropic Claude Managed Agents as a cl",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-plugin-creator",
+    "name": "ruflo-plugin-creator",
+    "category": "dev",
+    "description": "Scaffold, validate, and publish new Claude Code plugins with the canonical plugin contract — now including governed Claude Code mods (function hooks), ADR + smoke + Compatibility + namespace coordination + MCP-tool drift",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-migrations",
+    "name": "ruflo-migrations",
+    "category": "dev",
+    "description": "Schema migration management — generate, validate, dry-run, and rollback database migrations. As a mod (ADR-445): a tighten-only guard on its tools, /migrations-mod, and a status file the console shows",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-ruvllm",
+    "name": "ruflo-ruvllm",
+    "category": "dev",
+    "description": "RuVLLM local inference with chat formatting (Claude/GPT/Gemini/Ollama/Cohere), model configuration, MicroLoRA fine-tuning, and SONA real-time adaptation. As a mod (ADR-445): a guard that keeps secrets out of adapters and",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-deepseek-harness",
+    "name": "ruflo-deepseek-harness",
+    "category": "dev",
+    "description": "DeepSeek model harness for ruflo — agents, commands, scripts, and skills for running and evaluating DeepSeek-backed workflows within the ruflo swarm.",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-music",
+    "name": "ruflo-music",
+    "category": "dev",
+    "description": "AI music generation via Cognitum Music (cogmusic MCP) — compose lyrics/prompts, generate tracks, separate stems, extract MIDI, and master through your own music.cognitum.one account. As a mod (ADR-445): a tighten-only gu",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-x-gateway",
+    "name": "ruflo-x-gateway",
+    "category": "dev",
+    "description": "Coordinate AI-agent swarms through signed federation messages, channels, and work claims. The remote Claude connector exposes a directory-safe Streamable HTTP MCP surface with OAuth-protected publishing and five ruv:// r",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-business-pods",
+    "name": "ruflo-business-pods",
+    "category": "dev",
+    "description": "ADR-164 Phase 2 — business-domain pod templates for the federated business autopilot. Ships the sales pod template (templates/sales.json) and a single-tick runner (scripts/pod-tick.mjs) that pre-flights templates via bus",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-bbs-federation",
+    "name": "ruflo-bbs-federation",
+    "category": "dev",
+    "description": "AgentBBS cross-host agent federation for ruflo (ADR-164). Phase 1 exposes room coordination — federation_bbs_register / federation_bbs_publish / federation_bbs_watch / federation_bbs_human_join. Phase 2 (v3.40.0) adds si",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-chatgpt-federation",
+    "name": "ruflo-chatgpt-federation",
+    "category": "dev",
+    "description": "Dedicated ChatGPT Federation MCP publisher with isolated Nostr signing-key custody, OAuth-scoped publishing, and signed public-channel coordination over the Ruflo relay. As a mod (ADR-445 pattern): a tighten-only tool gu",
+    "enabled": false
+  },
+  {
+    "id": "ruflo-agntcy",
+    "name": "ruflo-agntcy",
+    "category": "dev",
+    "description": "AGNTCY/Outshift Internet-of-Cognition runtime integration for Ruflo — SLIM secure transport for cross-host agent coordination, CASA intent-scoped tool authorization enforcement, optional IOC Layer 9 coordination events, ",
+    "enabled": false
+  }
+]

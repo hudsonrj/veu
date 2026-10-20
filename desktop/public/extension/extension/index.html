@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Véu Host 0.3.3</title>
+    <style>
+      :root { color-scheme: dark; --ink:#07090c; --filament:#e8c27a; --signal:#7fe7d4;
+        --mist:rgba(236,242,248,.78); --dim:rgba(236,242,248,.42);
+        --font:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; }
+      *{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:var(--font);color:var(--mist);
+        background:radial-gradient(70% 50% at 80% 0%,rgba(127,231,212,.08),transparent 50%),var(--ink);
+        padding:2.5rem 1.25rem 3rem}
+      main{max-width:40rem;margin:0 auto}
+      h1{font-size:2rem;color:var(--filament);margin:0 0 .4rem}
+      h2{font-size:1.1rem;color:var(--filament);margin:1.6rem 0 .5rem}
+      .ver{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;color:var(--signal)}
+      p,li{line-height:1.55;font-weight:300;color:var(--dim)}
+      code{font-family:var(--mono);font-size:.82em;color:var(--filament);word-break:break-all}
+      a{color:var(--signal)}
+      .box{margin-top:1rem;padding:1rem 1.1rem;border:1px solid rgba(232,194,122,.22);background:rgba(7,9,12,.45)}
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="ver">EXTENSÃO · 0.3.3</p>
+      <h1>Véu Host</h1>
+      <p>Corrige detecção do host nativo (host.info agora consulta Native Messaging).</p>
+      <div class="box">
+        <ol>
+          <li>Baixe <a href="./veu-host-0.3.3.tar.gz">veu-host-0.3.3.tar.gz</a></li>
+          <li>Carregue a pasta em <code>chrome://extensions</code> (0.3.3)</li>
+          <li>Na pasta <code>native</code> do pacote novo:<br/>
+            <code>install.cmd njjolnpipkokedmomepbhhkdllbonage</code></li>
+          <li><strong>Feche o Chrome inteiro</strong> e abra de novo</li>
+          <li>https://veu.ch8ai.com.br → Arquivos → redetectar</li>
+        </ol>
+      </div>
+    </main>
+  </body>
+</html>

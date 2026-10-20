@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "Véu Host",
+  "description": "Liga o SO web Véu (veu.ch8ai.com.br) à máquina física — abre apps, lê e-mail/mensagens em abas abertas.",
+  "version": "0.3.7",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "https://veu.ch8ai.com.br/*",
+    "http://veu.ch8ai.com.br/*",
+    "https://*.ch8ai.com.br/*",
+    "http://169.58.19.232/*",
+    "http://169.58.19.232:8820/*",
+    "http://localhost/*",
+    "http://localhost:8820/*",
+    "http://127.0.0.1/*",
+    "http://127.0.0.1:8820/*",
+    "https://mail.google.com/*",
+    "https://calendar.google.com/*",
+    "https://web.whatsapp.com/*",
+    "https://app.slack.com/*",
+    "https://outlook.office.com/*",
+    "https://outlook.live.com/*",
+    "https://teams.microsoft.com/*",
+    "https://www.notion.so/*",
+    "https://notion.so/*",
+    "https://grok.com/*",
+    "https://grok.x.ai/*",
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://claude.ai/*",
+    "https://accounts.x.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://veu.ch8ai.com.br/*",
+        "http://veu.ch8ai.com.br/*",
+        "https://*.ch8ai.com.br/*",
+        "http://169.58.19.232/*",
+        "http://169.58.19.232:8820/*",
+        "http://localhost/*",
+        "http://localhost:8820/*",
+        "http://127.0.0.1/*",
+        "http://127.0.0.1:8820/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "Véu Host · 0.3.7"
+  }
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Véu Host 0.3.7</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #07090c;
+        --filament: #e8c27a;
+        --signal: #7fe7d4;
+        --mist: rgba(236, 242, 248, 0.78);
+        --dim: rgba(236, 242, 248, 0.42);
+        --font: "IBM Plex Sans", system-ui, sans-serif;
+        --mono: "IBM Plex Mono", ui-monospace, monospace;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: var(--font);
+        color: var(--mist);
+        background:
+          radial-gradient(70% 50% at 80% 0%, rgba(127, 231, 212, 0.08), transparent 50%),
+          var(--ink);
+        padding: 2.5rem 1.25rem 3rem;
+      }
+      main { max-width: 40rem; margin: 0 auto; }
+      h1 { font-size: 2rem; color: var(--filament); margin: 0 0 0.4rem; }
+      h2 { font-size: 1.1rem; color: var(--filament); margin: 1.6rem 0 0.5rem; }
+      .ver {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        color: var(--signal);
+      }
+      p, li { line-height: 1.55; font-weight: 300; color: var(--dim); }
+      code {
+        font-family: var(--mono);
+        font-size: 0.82em;
+        color: var(--filament);
+        word-break: break-all;
+      }
+      a { color: var(--signal); }
+      .box {
+        margin-top: 1rem;
+        padding: 1rem 1.1rem;
+        border: 1px solid rgba(232, 194, 122, 0.22);
+        background: rgba(7, 9, 12, 0.45);
+      }
+      .btn {
+        display: inline-block;
+        margin: 0.35rem 0.5rem 0.35rem 0;
+        padding: 0.55rem 0.9rem;
+        border: 1px solid rgba(127, 231, 212, 0.45);
+        color: var(--signal);
+        text-decoration: none;
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="ver">EXTENSÃO · 0.3.7</p>
+      <h1>Véu Host</h1>
+      <p>
+        Liga o SO <strong>veu.ch8ai.com.br</strong> ao seu Chrome/Edge:
+        ChatGPT/Claude/Grok (assinatura), WhatsApp Web (QR), Agenda, arquivos.
+      </p>
+
+      <div class="box">
+        <a class="btn" href="/veu-host-0.3.7.tar.gz">baixar veu-host-0.3.7.tar.gz</a>
+        <a class="btn" href="/extension/manifest.json">manifest.json</a>
+      </div>
+
+      <h2>Instalar (Chrome / Edge)</h2>
+      <div class="box">
+        <ol>
+          <li>Baixe e <strong>descompacte</strong> o <code>.tar.gz</code> numa pasta fixa</li>
+          <li>Abra <code>chrome://extensions</code> (ou <code>edge://extensions</code>)</li>
+          <li>Ative <strong>Modo do desenvolvedor</strong></li>
+          <li><strong>Carregar sem compactação</strong> → selecione a pasta descompactada (a que tem <code>manifest.json</code>)</li>
+          <li>Volte em <a href="https://veu.ch8ai.com.br">veu.ch8ai.com.br</a> e dê <strong>F5</strong> — topo deve mostrar <em>host · ok</em></li>
+        </ol>
+      </div>
+
+      <h2>Já tinha uma versão antiga?</h2>
+      <p>
+        Em <code>chrome://extensions</code> clique em <strong>Recarregar</strong> na Véu Host,
+        ou remova e carregue de novo a pasta 0.3.7.
+      </p>
+
+      <h2>Host nativo (opcional · terminal/arquivos)</h2>
+      <p>
+        Pasta <code>native/</code> no pacote — <code>install.sh</code> (Linux/Mac) ou
+        <code>install.cmd</code> (Windows) com o ID da extensão.
+      </p>
+    </main>
+  </body>
+</html>

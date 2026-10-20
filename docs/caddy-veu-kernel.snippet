@@ -1,0 +1,14 @@
+# Bloco esperado em /etc/caddy/Caddyfile para veu.ch8ai.com.br
+# Incluir /servers* no matcher do kernel (junto com /subscriptions* etc.)
+
+veu.ch8ai.com.br {
+	encode zstd gzip
+	# /bridge* cobre grokbot ask/brief/inbox/approve/handoff/inbound
+	@kernel path /pulse* /chat* /connectors* /harness* /bridge* /memory* /weave* /mission* /agents* /skills* /ecc* /subscriptions* /servers* /mcp* /llm* /studio* /os* /openrag* /notion* /ruflo* /ruos* /ready* /docs* /openapi.json /health*
+	handle @kernel {
+		reverse_proxy 127.0.0.1:8821
+	}
+	handle {
+		reverse_proxy 127.0.0.1:8820
+	}
+}

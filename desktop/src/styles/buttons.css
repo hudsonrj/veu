@@ -1,0 +1,101 @@
+/**
+ * Contraste obrigatório dos botões de ação no Véu.
+ * Importar por último — vence estilos inline de apps que deixavam
+ * UA branco + color:inherit (texto claro = ilegível).
+ */
+
+.os button {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  color: #e8ebe6 !important;
+  background: #14181f !important;
+  background-color: #14181f !important;
+  border: 1px solid rgba(232, 194, 122, 0.4) !important;
+  cursor: pointer;
+}
+
+.os button:hover:not(:disabled) {
+  background: #1c2430 !important;
+  background-color: #1c2430 !important;
+  border-color: rgba(232, 194, 122, 0.6) !important;
+  color: #f4efe6 !important;
+}
+
+.os button:disabled {
+  opacity: 0.45 !important;
+  cursor: default !important;
+}
+
+.os button.is-on,
+.os button[aria-pressed="true"],
+.os button[aria-checked="true"] {
+  background: rgba(232, 194, 122, 0.24) !important;
+  background-color: rgba(232, 194, 122, 0.24) !important;
+  border-color: rgba(232, 194, 122, 0.55) !important;
+  color: #f4efe6 !important;
+}
+
+/* Chrome do SO — não são botões de formulário/ação */
+.os .desk-icons__icon,
+.os .desk-net__node,
+.os .desk-net__legend button,
+.os .dock__btn,
+.os .orbit__node,
+.os .os__launcher button,
+.os .gear,
+.os .win__actions button,
+.os .win__drag,
+.os .win__resize {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.os .desk-icons__icon,
+.os .desk-net__node,
+.os .dock__btn,
+.os .os__launcher button,
+.os .orbit__node,
+.os .win__resize {
+  border: 0 !important;
+}
+
+.os .desk-icons__icon,
+.os .desk-net__node,
+.os .dock__btn,
+.os .os__launcher button {
+  color: inherit !important;
+  padding: 0 !important;
+}
+
+.os .orbit__node {
+  color: var(--mist-dim, #8a939c) !important;
+  padding: 0.45rem 0.75rem !important;
+}
+
+.os .orbit__node.is-active {
+  color: #f4efe6 !important;
+}
+
+.os .win__actions button {
+  border: 1px solid rgba(232, 194, 122, 0.2) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  color: #e8ebe6 !important;
+  padding: 0.2rem 0.45rem !important;
+}
+
+.os .win__actions button:hover {
+  background: var(--filament, #e8c27a) !important;
+  color: #07090c !important;
+}
+
+/* Login: botão principal precisa de contraste no card claro */
+.login-gate button {
+  color: #07090c !important;
+  background: #e8c27a !important;
+  border: 1px solid #e8c27a !important;
+}
+.login-gate button:hover:not(:disabled) {
+  background: #f0d7a2 !important;
+  color: #07090c !important;
+}

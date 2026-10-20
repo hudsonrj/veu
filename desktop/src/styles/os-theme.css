@@ -1,0 +1,129 @@
+/**
+ * Tokens compartilhados do desktop Véu.
+ * Apps devem preferir var(--os-*) em vez de cores hardcoded.
+ */
+:root {
+  /* Orbital / ruOS-inspired — Ruflo spine */
+  --os-ink: #e0e4f2;
+  --os-muted: #8a939c;
+  --os-dim: #5c6570;
+  --os-line: rgba(121, 223, 255, 0.28);
+  --os-panel: rgba(8, 19, 31, 0.55);
+  --os-signal: #79dfff;
+  --os-filament: #e8c27a;
+  --os-live: #8ee6be;
+  --os-danger: #ff929d;
+  --os-bg0: #101420;
+  --os-bg1: #08131f;
+  --os-bg2: #08080c;
+  --os-font: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --os-display: "Syne", "IBM Plex Serif", Georgia, serif;
+  --os-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --os-accent-magenta: #ed99ff;
+  --os-accent-coral: #f06449;
+}
+
+/* aliases usados por apps legados */
+:root {
+  --font-display: var(--os-display);
+  --font-mono: var(--os-mono);
+  --signal: var(--os-signal);
+  --filament: var(--os-filament);
+  --mist: var(--os-ink);
+  --mist-dim: var(--os-muted);
+}
+
+/* painéis novos (custos, credenciais, aprovações, ask-life) */
+.panel-app {
+  padding: 0.85rem 1rem 1.1rem;
+  color: var(--os-ink);
+  font-family: var(--os-font);
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.panel-app__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+.panel-app__head h2 {
+  margin: 0;
+  font-family: Syne, var(--os-display);
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+.panel-app__tabs { display: flex; gap: 0.35rem; margin-bottom: 0.75rem; }
+.panel-app button {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+.panel-app__tabs button.is-on {
+  background: rgba(232, 194, 122, 0.22) !important;
+  color: #f4efe6 !important;
+  border-color: rgba(232, 194, 122, 0.45) !important;
+}
+
+/* Exceções: chrome transparente do SO (não são “botões de ação”) */
+.panel-app__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+.panel-app__cards > div {
+  padding: 0.65rem;
+  background: var(--os-panel);
+  border: 1px solid rgba(232,238,244,0.08);
+}
+.panel-app__cards span { display: block; color: var(--os-muted); font-size: 0.72rem; }
+.panel-app__cards strong { font-size: 1.1rem; }
+.panel-app__list { list-style: none; margin: 0; padding: 0; }
+.panel-app__list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(232,238,244,0.08);
+  min-width: 0;
+}
+.panel-app__list .muted { color: var(--os-muted); }
+.panel-app__warn { color: var(--os-danger); }
+.panel-app__answer { white-space: pre-wrap; line-height: 1.45; }
+.panel-app__brief {
+  white-space: pre-wrap;
+  font-family: var(--os-mono);
+  font-size: 0.78rem;
+  background: var(--os-panel);
+  padding: 0.75rem;
+  overflow-x: auto;
+}
+.panel-app__form { display: flex; gap: 0.45rem; margin-bottom: 0.85rem; }
+.panel-app__form input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--os-line);
+  background: rgba(0,0,0,0.25);
+  color: inherit;
+}
+.seal {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.68rem;
+  border: 1px solid rgba(232,238,244,0.2);
+}
+.seal--ok { color: var(--os-live); }
+.seal--needs_login, .seal--stale, .seal--high { color: var(--os-danger); }
+.seal--expiring, .seal--medium { color: var(--os-signal); }
+.panel-app__row-actions { display: flex; gap: 0.35rem; align-items: center; flex-shrink: 0; }
+.panel-app__row-actions a { color: var(--os-filament); font-size: 0.8rem; }
+.panel-app__row-actions .danger { color: var(--os-danger); }
+
+html, body, #root {
+  max-width: 100vw;
+  overflow-x: hidden;
+}

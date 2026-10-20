@@ -1,0 +1,3 @@
+[submodule "vendor/ecc"]
+	path = vendor/ecc
+	url = https://github.com/hudsonrj/ECC.git

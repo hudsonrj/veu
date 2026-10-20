@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+desktop/dist/
+
+engine/.env
+**/.env
+**/.env.production
+
+.venv
+
+# local/generated
+graft/.cache/
+desktop/dist.bak/
+.claude/settings.local.json

@@ -64,67 +64,13 @@ O Véu não é um "app de chat". É um **desktop web vivo**, com janelas, dock, 
 
 ## ⬡ Arquitetura
 
-```mermaid
-flowchart LR
-    U((você)) -->|intenção| D
-
-    subgraph PELE["desktop · React + Vite"]
-        D[Shell do SO<br/>janelas · dock · campo vivo]
-        C[Chat nativo]
-        M[Missão / Ajustes / apps]
-    end
-
-    subgraph KERNEL["engine · FastAPI"]
-        R[runtime<br/>weave → formação]
-        J[Jev<br/>decisões tipadas]
-        L[LLM híbrido<br/>OpenAI · OpenRouter · Ollama]
-        P[política de risco<br/>respirações · aprovações]
-    end
-
-    subgraph MUSCULO["músculo"]
-        E[ECC<br/>71 agentes · 311 skills]
-    end
-
-    subgraph NERVOS["nervos & pontes"]
-        N1[Notion · Slack · Gmail<br/>Workspace · MCP · APIs]
-        N2[Grok Bot · Hermes · OpenClaw]
-    end
-
-    subgraph FISICO["mundo físico"]
-        H[Véu Host<br/>extensão + native host]
-        B[Placa ESP32 CYD]
-    end
-
-    D & C & M -->|REST + SSE| R
-    R --> J & L & P
-    R --> E
-    R --> N1 & N2
-    D <-->|Native Messaging| H
-    B <-->|WiFi · /device/esp32| R
-```
+<img src="docs/diagrams/arquitetura.png" alt="Arquitetura do Véu: pele, kernel, músculo, nervos e mundo físico" width="100%" />
 
 Um pedido no chat passa por este ciclo:
 
-```mermaid
-sequenceDiagram
-    participant V as Você
-    participant D as Desktop
-    participant K as Kernel
-    participant A as Agentes ECC / nervos
-    V->>D: "organize meu dia e prepare a proposta"
-    D->>K: POST /chat {message, breath}
-    K-->>D: thinking
-    K-->>D: plan (formação: nervos, agentes, passos)
-    loop cada passo
-        K->>A: executa (dentro do teto de risco)
-        K-->>D: step running → done
-    end
-    K-->>D: reply
-    K-->>D: done
-    Note over D: tudo aparece ao vivo na janela
-```
+<img src="docs/diagrams/ciclo-do-chat.png" alt="Ciclo de um pedido no chat" width="100%" />
 
-Mais detalhes em [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md).
+Mais detalhes em [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md). Os fontes dos diagramas (Mermaid) ficam em [`docs/diagrams/`](docs/diagrams/).
 
 ## ▷ Começar
 

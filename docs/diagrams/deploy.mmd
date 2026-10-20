@@ -1,0 +1,21 @@
+flowchart TB
+    subgraph host["computador do usuário"]
+        BR[navegador] --- EXT[Véu Host<br/>extensão]
+        EXT ---|Native Messaging| NH[native host<br/>veu_host.py]
+        NH --- OS[(shell · fs · apps)]
+    end
+    subgraph server["servidor"]
+        CADDY[Caddy + TLS]
+        DESK[desktop estático<br/>:8820]
+        KER[kernel FastAPI<br/>:8821]
+        DATA[(VEU_DATA_ROOT<br/>memória · auditoria · jobs)]
+        ECC[(vendor/ecc)]
+    end
+    BR -->|HTTPS| CADDY
+    CADDY -->|"/"| DESK
+    CADDY -->|"/chat · /pulse · /bridge …"| KER
+    KER --- DATA
+    KER --- ECC
+    KER -->|APIs · MCP| EXT_SVC[Notion · Google · Slack · OpenRAG]
+    KER <-->|webhook + handoff| GROK[Grok Bot<br/>colônia cloud]
+    PLACA[Placa ESP32] -->|WiFi| CADDY

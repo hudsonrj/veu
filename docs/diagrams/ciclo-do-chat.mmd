@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant V as Você
+    participant D as Desktop
+    participant K as Kernel
+    participant A as Agentes ECC / nervos
+    V->>D: "organize meu dia e prepare a proposta"
+    D->>K: POST /chat (message, breath)
+    K-->>D: thinking
+    K-->>D: plan (formação: nervos, agentes, passos)
+    loop cada passo
+        K->>A: executa (dentro do teto de risco)
+        K-->>D: step running → done
+    end
+    K-->>D: reply
+    K-->>D: done
+    Note over D: tudo aparece ao vivo na janela

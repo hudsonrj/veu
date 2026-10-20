@@ -1,0 +1,46 @@
+flowchart TB
+    U(("você")) -->|"intenção"| PELE
+
+    subgraph PELE["PELE · desktop (React + Vite)"]
+        direction LR
+        D["Shell do SO<br/>janelas · dock · campo vivo"]
+        C["Chat nativo"]
+        M["Missão · Ajustes · apps"]
+    end
+
+    PELE ==>|"REST + SSE"| R
+
+    subgraph KERNEL["KERNEL · engine (FastAPI)"]
+        direction LR
+        J["Jev<br/>decisões tipadas"]
+        R["runtime<br/>intenção → formação"]
+        P["política de risco<br/>respirações · aprovações"]
+        L["LLM híbrido<br/>OpenAI · OpenRouter · Ollama"]
+    end
+
+    R --> J
+    R --> P
+    R --> L
+
+    R ==> E
+    R ==> N1
+    R ==> N2
+
+    subgraph MUSCULO["MÚSCULO"]
+        E["ECC<br/>71 agentes · 311 skills"]
+    end
+
+    subgraph NERVOS["NERVOS e PONTES"]
+        direction LR
+        N1["Notion · Slack · Gmail<br/>Workspace · MCP · APIs"]
+        N2["Grok Bot · Hermes · OpenClaw"]
+    end
+
+    subgraph FISICO["MUNDO FÍSICO"]
+        direction LR
+        H["Véu Host<br/>extensão + native host"]
+        B["Placa ESP32 CYD"]
+    end
+
+    D -.->|"Native Messaging"| H
+    B -.->|"WiFi"| R

@@ -16,29 +16,7 @@ E dois braços físicos:
 | **Véu Host** | `extension/` | Extensão de navegador + native host (Native Messaging): shell, arquivos, SSH e apps do computador real. |
 | **Placa** | `device/esp32-cyd/` | ESP32 com tela touch de 2.8": painel físico sincronizado com o kernel. |
 
-```mermaid
-flowchart TB
-    subgraph host["computador do usuário"]
-        BR[navegador] --- EXT[Véu Host<br/>extensão]
-        EXT ---|Native Messaging| NH[native host<br/>veu_host.py]
-        NH --- OS[(shell · fs · apps)]
-    end
-    subgraph server["servidor"]
-        CADDY[Caddy + TLS]
-        DESK[desktop estático<br/>:8820]
-        KER[kernel FastAPI<br/>:8821]
-        DATA[(VEU_DATA_ROOT<br/>memória · auditoria · jobs)]
-        ECC[(vendor/ecc)]
-    end
-    BR -->|HTTPS| CADDY
-    CADDY -->|/ | DESK
-    CADDY -->|/chat /pulse /bridge …| KER
-    KER --- DATA
-    KER --- ECC
-    KER -->|APIs · MCP| EXT_SVC[Notion · Google · Slack · OpenRAG]
-    KER <-->|webhook + handoff| GROK[Grok Bot<br/>colônia cloud]
-    PLACA[Placa ESP32] -->|WiFi| CADDY
-```
+<img src="diagrams/deploy.png" alt="Topologia de deploy do Véu" width="100%" />
 
 ---
 
